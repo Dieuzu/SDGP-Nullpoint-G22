@@ -1,2 +1,6 @@
+venv/
 Test/
 Libraries/
+
+#Randomly generated files
+.google-cookie
