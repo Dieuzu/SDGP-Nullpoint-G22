@@ -1,0 +1,10 @@
+https://answers.unity.com/questions/1838019/gpu-instancing-in-contradiction-with-occlusion-cul.html
+https://docs.unity3d.com/Manual/GPUInstancing.html
+https://docs.unity3d.com/Manual/OcclusionCulling.html
+https://tcstalent.com/news/unity-gpu-culling-experiments
+https://www.mpc-rnd.com/unity-gpu-culling-experiments/
+https://wiki.gurbu.com/index.php?title=GPU_Instancer:BestPractices
+https://www.gamedeveloper.com/programming/good-practices-for-fps-optimization-and-their-inter-relation
+https://www.reddit.com/r/Unity3D/comments/dcz9l4/occlusion_gpu_instancing_mesh_combining_any_other/
+https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/performance-recommendations-for-unity
+https://stackoverflow.com/questions/67746106/how-does-the-game-rust-place-millions-of-grass-rocks-and-trees
