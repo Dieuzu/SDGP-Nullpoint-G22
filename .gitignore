@@ -1,6 +1,7 @@
 venv/
 Test/
 Libraries/
+4_RefferenceResultGen/__pycache__/
 
 #Randomly generated files
 .google-cookie
