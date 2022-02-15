@@ -1,5 +1,6 @@
 # this will be a common class for every task created by the system
 class subTask:
+    taskID = 0                # for quick tracking 
     subTask = ""              #contains the Entire string of the task
     deadlineNumDays = 0       #contains the Remaining number of days till deadline
     
@@ -16,7 +17,8 @@ class subTask:
     searchMe = ""             #this will be the string that Will be passed through the Web Scraper
      
     #Constructor
-    def __init__(self, task, deadline, fName, MKey, k1, k2, k3, k4):
+    def __init__(self, ID, task, deadline, fName, MKey, k1, k2, k3, k4):
+        self.taskID = ID
         self.subTask = task
         self.deadlineNumDays = deadline
         self.fileName = fName
@@ -29,6 +31,7 @@ class subTask:
 
 
     def PwintMe (self): # this is a test method
+        print ("The Current task ID is : " + self.taskID) 
         print ("The Current task is : " + self.subTask) 
         print ("The Current task is due in : " + self.deadlineNumDays + " Days") 
         print ("The Current task is stored as : " + self.fileName + ".txt") 
