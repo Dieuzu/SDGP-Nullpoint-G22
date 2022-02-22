@@ -11,7 +11,7 @@ except ImportError:
  
 SearchResults = []
 RefinedResults = []
-core = ["geeksforgeeks", "oracle"] #Core domains to get results from
+core = ["geeksforgeeks", "oracle", ".edu/", ".edu.", ".pdf", "w3schools", "freecodecamp", "codecademy"] #Core domains to get results from
 # to search
 # this is a temp run code with manual input
 idNumber = str(1)
@@ -36,15 +36,21 @@ print("")
 
 #runs the Search from the details stored in class
 query = NewTask.searchMe
-print("Generating Refined Results Needed for Subtask " + NewTask.taskID +": \n")
+pdfQuery = query + " filetype:pdf"
 
-for j in search(query, tld="co.uk", num=20, stop=20, pause=2):
-    #print(j + " \n")
-    SearchResults.append(str(j))
-    #f = open("4_RefferenceResultGen\TestFolder\\"+  NewTask.fileName +".txt", "a")
-    f = open("4_RefferenceResultGen\TestFolder\Test.txt", "a") # comment me and uncomment above line in final
-    f.write(j+"\n")
-    f.close()
+print("Generating Refined Results Needed for Subtask " + NewTask.taskID +"....")
+
+def BaseSearch(String, ResultNum):
+    for j in search(String, tld="co.uk", num=ResultNum, stop=ResultNum, pause=2):
+        #print(j + " \n")
+        SearchResults.append(str(j))
+        #f = open("4_RefferenceResultGen\TestFolder\\"+  NewTask.fileName +".txt", "a")
+        f = open("4_RefferenceResultGen\TestFolder\Test.txt", "a") # comment me and uncomment above line in final
+        f.write(j+"\n")
+        f.close()
+      
+BaseSearch(pdfQuery,2)        
+BaseSearch(query, 20)
     
 for x in range(len(SearchResults)):
       for y in range(len(core)):
@@ -60,7 +66,7 @@ for x in range(len(SearchResults)):
 if os.path.exists("4_RefferenceResultGen\TestFolder\Test.txt") and os.path.exists("4_RefferenceResultGen\TestFolder\Refined_Test.txt"):
       os.remove("4_RefferenceResultGen\TestFolder\Test.txt")
       #os.remove("4_RefferenceResultGen\TestFolder\Refined_Test.txt")
-      print("\nDeleted the files Test.txt and Refined_Test.txt")
+      print("\nDeleted the files Test.txt")
 else:
   print("The files does not exist Continuing")
 
