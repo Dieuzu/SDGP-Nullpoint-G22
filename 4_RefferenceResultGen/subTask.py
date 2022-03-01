@@ -35,5 +35,5 @@ class subTask:
         print ("The Current task is : " + self.subTask) 
         print ("The Current task is due in : " + self.deadlineNumDays + " Days") 
         print ("The Current task is stored as : " + self.fileName + ".txt") 
-        print ("The Current task Search String is : " + self.searchMe) 
+        #print ("The Current task Search String is : " + self.searchMe) 
         
