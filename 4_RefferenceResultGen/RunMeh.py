@@ -1,10 +1,13 @@
 # write-html.py
 import webbrowser
+import os # this for deleting files 
+import time
 
 def main():
     f = open('4_RefferenceResultGen\TestFolder\SubTaskResults.html','a')
     r = open('4_RefferenceResultGen\TestFolder\Refined_Test.txt','r')
     
+
     P1 = """<!DOCTYPE html>
     <html style="font-size: 16px;">
       <head>
@@ -89,6 +92,13 @@ def main():
 
     url = '4_RefferenceResultGen\TestFolder\SubTaskResults.html'
     webbrowser.open(url, new=2)  # open in new tab
-       
+    time.sleep(60)   # Delays for 60 seconds. You can also use a float value.
+
+    if os.path.exists("4_RefferenceResultGen\TestFolder\SubTaskResults.html") :
+          os.remove("4_RefferenceResultGen\TestFolder\SubTaskResults.html")
+          print("\nDeleted the file SubTaskResults.html")
+    else:
+      print("The files does not exist Continuing")
+      
 if __name__ == "__main__":
    main()    

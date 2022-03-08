@@ -3,6 +3,8 @@ from subTask import subTask
 from shlex import join
 import re
 import RunMeh
+import os # this for deleting files 
+import time
 
 try:
     from googlesearch import search
@@ -15,18 +17,20 @@ core = ["geeksforgeeks", "oracle", ".edu/", ".pdf", "w3schools", "freecodecamp",
 # to search
 # this is a temp run code with manual input
 idNumber = str(1)
-Task = input("Please enter the Task at hand : ")
+Task = "this is a String for subtask" #input("Please enter the Task at hand : ")
 
-Deadline = input("Please enter the deadline in number of days : ")
+Deadline = "4" #input("Please enter the deadline in number of days : ")
  
 Filename = "ExampleFileName" #input("Please enter the Filename : ")
 
-MasterKey = input("Please enter the MasterKey : ")
+rnlp = open('4_RefferenceResultGen\\NLPResults.txt','r')
 
-Keyword1 = input("Please enter the 1st Keyword : ")
-Keyword2 = input("Please enter the 2nd Keyword : ")
-Keyword3 = input("Please enter the 3rd Keyword : ")
-Keyword4 = input("Please enter the 4th Keyword : ") 
+MasterKey = rnlp.readline() #input("Please enter the MasterKey : ")
+
+Keyword1 = rnlp.readline()  #input("Please enter the 1st Keyword : ")
+Keyword2 = rnlp.readline()  #input("Please enter the 2nd Keyword : ")
+Keyword3 = rnlp.readline()  #input("Please enter the 3rd Keyword : ")
+Keyword4 = rnlp.readline()  #input("Please enter the 4th Keyword : ") 
 
 print("")
 
@@ -55,6 +59,8 @@ def BaseSearch(String, ResultNum):
 BaseSearch(pdfQuery,2)        
 BaseSearch(query, 20)
 BaseSearch(SSchQuery,2)
+
+SearchResults = list(dict.fromkeys(SearchResults)) #this ensures no duplicates in lines 
         
 for x in range(len(SearchResults)):
       for y in range(len(core)):
@@ -67,4 +73,13 @@ for x in range(len(SearchResults)):
             f.close()
             break
 
-RunMeh.main() # this will start the other python code to add links to website and run website
+RunMeh.main()
+
+time.sleep(5)   # Delays for 5 seconds. You can also use a float value.      
+# this is to delete the unwanted search results text file this wont exist after i import them to classes           
+if os.path.exists("4_RefferenceResultGen\TestFolder\Test.txt") and os.path.exists("4_RefferenceResultGen\TestFolder\Refined_Test.txt"):
+      os.remove("4_RefferenceResultGen\TestFolder\Test.txt")
+      os.remove("4_RefferenceResultGen\TestFolder\Refined_Test.txt")
+      print("\nDeleted the files Test.txt and Refined_Test.txt")
+else:
+  print("The files does not exist Continuing")
