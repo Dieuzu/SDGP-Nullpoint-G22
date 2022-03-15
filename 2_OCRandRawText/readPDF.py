@@ -1,6 +1,4 @@
 import PyPDF2
-
-
 def pdfFile(filename):
     x = 0
 
@@ -15,9 +13,10 @@ def pdfFile(filename):
         print("Page no :" + str (1 + pdfReader.getPageNumber(pageObj)))
         content = pageObj.extractText()
 
-        f = open('D:\campus\p.txt', 'w')
+        f = open('p.txt', 'w')
         f.write(content)
         f.close()       
 
     pdfFileObj.close()
 
+pdfFile('yes.pdf')
