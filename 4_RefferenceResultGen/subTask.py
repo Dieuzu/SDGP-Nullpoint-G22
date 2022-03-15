@@ -15,7 +15,7 @@ class subTask:
     keyWord4 = ""
     
     searchMe = ""             #this will be the string that Will be passed through the Web Scraper
-     
+    
     #Constructor
     def __init__(self, ID, task, deadline, fName, MKey, k1, k2, k3, k4):
         self.taskID = ID
