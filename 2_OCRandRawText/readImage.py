@@ -1,9 +1,23 @@
 import pytesseract
-from PIL import Image
-import easyocr 
+import cv2
 
-def readimage(imagename):
+def readimage(img):
+    text = pytesseract.image_to_string(img)
+    return text
 
-    return pytesseract.image_to_string(Image.open(imagename))
+img = cv2.imread("D:\campus\yes.png")
 
-print(readimage("D:\campus\download.png"))
+def grayscale(image):
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+def remove_noise(image):
+    return cv2.medianBlur(image,5)
+
+def thresholding(image):
+    return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
+
+img = grayscale(img)
+img = thresholding(img)
+img = remove_noise(img)
+
+print(readimage(img))
