@@ -4,7 +4,7 @@ import pkg_resources
 import BaseSearch
 
 def main():
-    required = {'google', 'beautifulsoup4', 'semanticscholar', 'spacy'}
+    required = {'google', 'beautifulsoup4', 'semanticscholar', 'spacy', 'opencv-python', 'pytesseract'}
     installed = {pkg.key for pkg in pkg_resources.working_set}
     missing = required - installed
 

@@ -5,7 +5,7 @@ def readimage(img):
     text = pytesseract.image_to_string(img)
     return text
 
-img = cv2.imread("D:\campus\yes.png")
+img = cv2.imread("2_OCRandRawText\\images\\test.png")   # '4_RefferenceResultGen\\NLPResults.txt
 
 def grayscale(image):
     return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
