@@ -1,23 +1,15 @@
-import pytesseract
-import cv2
+import pytesseract as tess
+tess.pytesseract.tesseract_cmd = r'C:\Users\Admin\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+from PIL import Image
 
-def readimage(img):
-    text = pytesseract.image_to_string(img)
-    return text
+def readImage(imagename):
+    img = Image.open(imagename)
+    text = tess.image_to_string(img)
 
-img = cv2.imread("2_OCRandRawText\\images\\test.png")   # '4_RefferenceResultGen\\NLPResults.txt
+    f = open('p.txt', 'w')
+    f.write(text)
+    f.close()   
 
-def grayscale(image):
-    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    print(text)
 
-def remove_noise(image):
-    return cv2.medianBlur(image,5)
-
-def thresholding(image):
-    return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-
-img = grayscale(img)
-img = thresholding(img)
-img = remove_noise(img)
-
-print(readimage(img))
+readImage('yes.png')
