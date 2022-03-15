@@ -1,5 +1,6 @@
 venv/
 4_RefferenceResultGen/__pycache__/
+Test/
 
 #Randomly generated files
 .google-cookie
