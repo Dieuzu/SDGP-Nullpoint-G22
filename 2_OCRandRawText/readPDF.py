@@ -18,5 +18,3 @@ def pdfFile(filename):
         f.close()       
 
     pdfFileObj.close()
-
-pdfFile('yes.pdf')
