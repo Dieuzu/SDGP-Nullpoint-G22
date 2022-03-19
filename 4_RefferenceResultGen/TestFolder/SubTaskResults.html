@@ -1,15 +1,4 @@
-# write-html.py
-import webbrowser
-import os # this for deleting files 
-import time
-
-def main():
-    
-    f = open('4_RefferenceResultGen\TestFolder\TaskResults.html','a')
-    r = open('4_RefferenceResultGen\TestFolder\Refined_Links.txt','r')
-    
-
-    P1 = """<!DOCTYPE html>
+<!DOCTYPE html>
               <html style="font-size: 16px;">
                 <head>
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,21 +41,19 @@ def main():
                       <h2 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-1"> Maybe the Following Links Might help you.....</h2>
                       <div class="u-border-16 u-border-palette-3-base u-line u-line-horizontal u-line-1"></div>
                       <div class="u-expanded-width u-list u-list-1">
-                        <div class="u-repeater u-repeater-1"> """
-              
-    P2_1 = """    <div class="u-align-left u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+                        <div class="u-repeater u-repeater-1">     <div class="u-align-left u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                   <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-                    <h5 class="u-text u-text-default u-text-2"> <a href=\""""
-                                    
-                
-                    
-    P2_3 = """</a></h5> 
+                    <h5 class="u-text u-text-default u-text-2"> <a href="https://www.javatpoint.com/difference-between-abstract-class-and-interface" target="_blank">Check out Link Number: 1 (83
+% Relevancy)</a></h5> 
               <div class="u-expanded-height-lg u-expanded-height-sm u-expanded-height-xl u-expanded-height-xs u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
                   </div>
-                </div> """
-
-
-    P3 = """
+                </div>     <div class="u-align-left u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+                  <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+                    <h5 class="u-text u-text-default u-text-2"> <a href="https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/" target="_blank">Check out Link Number: 2 (83
+% Relevancy)</a></h5> 
+              <div class="u-expanded-height-lg u-expanded-height-sm u-expanded-height-xl u-expanded-height-xs u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
+                  </div>
+                </div> 
               </div>
             </div>
           </div>
@@ -75,35 +62,4 @@ def main():
             <p class="u-small-text u-text u-text-variant u-text-1">Nullpoint Assignment manager</p>
           </div></footer>
       </body>
-    </html>"""
-    
-    print ("[SYSTEM] Creating the TaskResults.html")
-    f.write(P1)
-    Linkindex = 1
-    
-    for x in r:
-          spliter = x.split(",")
-          
-          P2_2 = "\" target=\"_blank\">Check out Link Number: " +  str(Linkindex)  + " (" + spliter[1] +"% Relevancy)"
-  
-          FullHtml =  P2_1 + spliter[0] + P2_2 + P2_3
-          Linkindex += 1 
-          f.write(FullHtml)
-
-    f.write(P3)
-    f.close()
-    
-    print("[SYSTEM] Deploying the TaskResults.html")
-
-    url = '4_RefferenceResultGen\TestFolder\TaskResults.html'
-    webbrowser.open(url, new=2)  # open in new tab
-    time.sleep(20)   # Delays for 20 seconds. You can also use a float value.
-
-    if os.path.exists("4_RefferenceResultGen\TestFolder\TaskResults.html") :
-          os.remove("4_RefferenceResultGen\TestFolder\TaskResults.html")
-          print("[SYSTEM] Deleted the file TaskResults.html")
-    else:
-      print("[SYSTEM] The files does not exist Continuing")
-      
-if __name__ == "__main__":
-   main()    
+    </html>
