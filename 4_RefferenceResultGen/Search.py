@@ -6,7 +6,7 @@ import os # this for deleting files
 import time
 import Relevency
 
-RelevancyPercent = 75
+RelevancyPercent = 20
 
 def main():
     try:
@@ -30,7 +30,7 @@ def main():
     SplitNLP = NLPString.split(" ")
     SplitNLP = list(dict.fromkeys(SplitNLP))
 
-    print("         NLP Result = " + str(SplitNLP))
+    print("[SYSTEM] NLP Result = " + str(SplitNLP)) #<=================== COMMENT THIS LINE OUT AT THE END!!!!!!!!! 
 
     
     #==================================================================================================================================
