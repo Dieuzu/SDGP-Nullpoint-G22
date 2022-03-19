@@ -2,7 +2,7 @@
 from subTask import subTask
 from shlex import join
 import re
-import RunMeh
+import RecomendWeb
 import os # this for deleting files 
 import time
 
@@ -14,11 +14,10 @@ def main():
         print("No module named 'google' found")
         print("Terminating Search....")
         quit()
-        
-    
+
     SearchResults = [] #this stores all results in this array
     RefinedResults = [] # this where only refined results are stored
-    core = ["geeksforgeeks", "oracle", ".edu/", ".pdf", "w3schools", "freecodecamp", "codecademy","javatpoint", "semanticscholar"] #Core domains to get results from
+    core = ["geeksforgeeks", "oracle", ".edu/", ".pdf", "w3schools", "freecodecamp", "codecademy", "javatpoint", "semanticscholar"] #Core domains to get results from
     # to search
     # this is a temp run code with manual input
     idNumber = str(1)
@@ -78,7 +77,7 @@ def main():
                 f.close()
                 break
 
-    RunMeh.main()
+    RecomendWeb.main()
 
     time.sleep(5)   # Delays for 5 seconds. can also use a float value.      
     # this is to delete the unwanted search results text file this wont exist after i import them to classes           

@@ -53,19 +53,19 @@ def main():
             <div class="u-expanded-width u-list u-list-1">
               <div class="u-repeater u-repeater-1"> """
               
-    P2_1 = """    <div class="u-align-left u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+    P2 = """    <div class="u-align-left u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                   <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
                     <h5 class="u-text u-text-default u-text-2"> <a href=\""""
                                     
                 
                     
-    P2_3 = """</a></h5> 
+    P3 = """</a></h5> 
               <div class="u-expanded-height-lg u-expanded-height-sm u-expanded-height-xl u-expanded-height-xs u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
                   </div>
                 </div> """
 
 
-    P3 = """
+    P4 = """
               </div>
             </div>
           </div>
@@ -80,14 +80,17 @@ def main():
 
     f.write(P1)
     Linkindex = 1
+    
     for x in r:
           P2_2 = "\" target=\"_blank\">Check out Link Number: " +  str(Linkindex)   
-          FullHtml =  P2_1 + x + P2_2 + P2_3
+          FullHtml =  P2 + x + P3
           Linkindex += 1 
           f.write(FullHtml)
 
-    f.write(P3)
+    f.write(P4)
+    
     f.close()
+    
     print("\nWebsite Created and deployed!")
 
     url = '4_RefferenceResultGen\TestFolder\SubTaskResults.html'
