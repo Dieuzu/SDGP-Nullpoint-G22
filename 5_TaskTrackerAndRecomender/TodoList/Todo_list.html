@@ -1,0 +1,47 @@
+<body>
+    <div class="container">
+      <div class="jumbotron page-header">
+    
+        <h2 style="margin:5px">Todo-List</h2>
+        
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="title">Task:-</label> <!--add task-->
+          <input type="text" id="title" class="form-control" placeholder="Add a title... ">
+        </div>
+        <div class="form-group">
+          <label for="usr">Who should do it:-</label> <!--user name or.....-->
+          <input type="text" id="usr" class="form-control" placeholder="Add a user...">
+        </div>
+        <div class="form-group">
+          <label for="usr">Due Date:-</label><!--set s due date-->
+          <input type="date" id="due-date" class="form-control" placeholder="Due date">
+        </div>
+        <div class="row">
+          <div class="col-xs-3 pull-left">
+            <button type="button" class="btn btn-primary" onclick="newElement()">Add Task</button>
+          </div>
+          <div class="dropdown col-xs-3 pull-left">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Sort
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-list" onclick="sortElementsById()">By ID</li>
+              <li class="dropdown-list" onclick="sortElementsByName()">By Name</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pull-right">
+            <div class="input-group">
+              <input id="search-text" onkeyup="searchInList()" type="text" class="form-control" placeholder="Search....." name="search">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="tasks">
+      <ul id="task-list">
+      </ul>
+    </div>
+    <ul id="pagination" class="pagination pagination-lg"></ul>
+  </body>
+  
