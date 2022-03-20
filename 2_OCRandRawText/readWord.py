@@ -14,7 +14,3 @@ def readword(filename):
     f = open('D:\campus\p.txt', 'w')
     f.write(a)
     f.close()
-
-
-readword("D:\campus\sassignment-converted.docx")
-
