@@ -94,29 +94,36 @@ body {
     background-repeat: no-repeat;
     background-color: #45a6d5;
   }
-  .right-col h1 {
+  .right-col h2 {
     font-size: 60px;
     font-weight: 900;
     color: #ffff;
     
   }
   
-  .right-col h1 span {
+  .right-col h2 span {
     color: #45a6d5;
   }
   
   .right-col p {
-    font-size: 18px;
+    font-size: 15px;
     color: #ffff;
+    padding-right: 45px;
   }
   
   .right-col {
-    padding: 40px 0 0 0;
+    padding: 20px 0 0 0;
+    width: 700px;
+    height: 62px;
+    left: 160px;
+    top: 193px;
   }
   
   .banner-img{
-    width: 500px;
+    width: 1000px;
     height: auto;
+    left: 200px;
+    right: 300px;
   }
   .widget-input {
     padding: 15px 50px;
@@ -140,11 +147,14 @@ body {
     margin-top: auto;
     text-align: center;
     padding-bottom: 10px;
-  border-radius: 5px;
+    border-radius: 5px;
   
   }
 
   .banner-img{
+    width: 300px;
+    height: 500px;
+    right: 300px;
   }
   
   .search-btn a {
@@ -221,6 +231,17 @@ body {
     padding: 36px;
     margin-left: 24px;
   }
+  .steps_details p {
+    align-items: center;
+  }
+
+  .icons{
+    width: 60px;
+    height: 62px;
+    left: 206px;
+    top: 1023px;
+
+  }
 
   .drag{
     background-color: #45a6d5;
@@ -229,12 +250,17 @@ body {
   }
   .drag-container{
     display: flex;
-    margin-left:400px;
+    margin-left:350px;
     padding-top: 130px;
   }
 
+  .drag-container h2{
+    color: #fff;
+  }
+  
+
   .upload-img{
-    margin-right: 50px;
+    margin-right: 70px;
   }
 
 .drag-section{
