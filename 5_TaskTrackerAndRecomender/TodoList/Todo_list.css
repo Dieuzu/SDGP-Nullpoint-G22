@@ -1,6 +1,5 @@
 body {
   
-    background-color:#7ad9ff;
     margin: 0;
     min-width: 250px;
      line-height: 1.2;
@@ -62,7 +61,7 @@ body {
   
   .btn-primary,
   .btn-success {
-    width: 40%;
+    width: 50%;
   }
   
   .pagination {

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login</title>
+
+    <!--external css sheets-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+
+</head>
+
+<body>
+    <header>
+        <a href="./index.html">
+            <img class="logo" src="Images/logo.png" />
+        </a>
+
+        <div class="btn-right">
+            <button class="primary-btn"><a href="./signup.html">Register</a></button>
+        </div>
+    </header>
+    <section class="login">
+        <div class="frame">
+            <img class="image" src="/SDGP-Nullpoint-G22/1_FrontEnd/Images/login-img.png" alt="">
+        </div>
+        <div class="form">
+            <b class="greetings">welcome back</b>
+            <h2 class="greetings">Login to your account</h2>
+            <!-- https://www.w3schools.com/howto/howto_css_login_form.asp -->
+            <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="/action_page.php" method="post">
+
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label><br>
+                        <input type="text" placeholder="Enter Username" name="uname" required><br><br>
+
+                        <label for="psw"><b>Password</b></label><br>
+                        <input type="password" placeholder="Enter Password" name="psw" required><br><br><br>
+
+                        <button type="submit" href="./user_page.html">Login</button><br>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label><br><br>
+                    </div>
+
+                    <div class="container">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancel</button>
+                        <span class="psw" style="color: #fff;"> <a href="#">Forgot password?</a></span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
