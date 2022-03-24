@@ -19,7 +19,7 @@ def spacyNLP(DIR, Name, Num):
     for chunk in taskDoc.noun_chunks:
     #    print(chunk)
         chunkKeywords = chunkKeywords + " " + str(chunk)
-    print(chunkKeywords)    
+    print("The Extracted Keywords are : " + chunkKeywords)    
     #print(str(taskDoc.ents))
 
     saveTaskNLPK = open(r""+Keyfile,'w')
