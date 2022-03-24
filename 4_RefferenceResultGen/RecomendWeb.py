@@ -1,7 +1,5 @@
 # write-html.py
 import webbrowser
-import os # this for deleting files 
-import time
 
 def main():
     
@@ -97,13 +95,6 @@ def main():
 
     url = '4_RefferenceResultGen\TestFolder\TaskResults.html'
     webbrowser.open(url, new=2)  # open in new tab
-    time.sleep(20)   # Delays for 20 seconds. You can also use a float value.
-
-    if os.path.exists("4_RefferenceResultGen\TestFolder\TaskResults.html") :
-          os.remove("4_RefferenceResultGen\TestFolder\TaskResults.html")
-          print("[SYSTEM] Deleted the file TaskResults.html")
-    else:
-      print("[SYSTEM] The files does not exist Continuing")
       
 if __name__ == "__main__":
     main()    
