@@ -1,93 +1,88 @@
-#this is the first early prototype to searching the net 
-from subTask import subTask
-from shlex import join
+# Built in stuff
 import re
+
+#Custom stuff
 import RecomendWeb
-import os # this for deleting files 
-import time
+import Relevency
+import Delete
 
 def main():
     try:
         from googlesearch import search
-        print("Sucessfully Imported the Google Module") #comment me out at the end
     except ImportError:
         print("No module named 'google' found")
         print("Terminating Search....")
         quit()
 
-    SearchResults = [] #this stores all results in this array
-    RefinedResults = [] # this where only refined results are stored
-    core = ["geeksforgeeks", "oracle", ".edu/", ".pdf", "w3schools", "freecodecamp", "codecademy", "javatpoint", "semanticscholar"] #Core domains to get results from
-    # to search
-    # this is a temp run code with manual input
-    idNumber = str(1)
-    Task = "this is a String for subtask" #input("Please enter the Task at hand : ")
+    RelevancyPercent = 20 # this is the tolerence for relevancy
 
-    Deadline = "4" #input("Please enter the deadline in number of days : ")
-    
-    Filename = "ExampleFileName" #input("Please enter the Filename : ")
+    SearchResults = []   # this stores all results in this array
+    RelevantResults = [] # this Stores all the results and the % of relevancy
+    RefinedResults = []  # this where only refined results are stored
+
+    coreDomains = ["geeksforgeeks", "oracle", ".edu/", ".pdf", "w3schools", "freecodecamp", "codecademy", "javatpoint", "semanticscholar"] #Core domains to get results from
 
     rnlp = open('4_RefferenceResultGen\\NLPResults.txt','r')
 
-    MasterKey = rnlp.readline() #input("Please enter the MasterKey : ")
+    print ("\n==================================================================================================================")
+    print ("[SYSTEM] Getting NLP Results from directory... ")
+    NLPString = rnlp.readline() 
 
-    Keyword1 = rnlp.readline()  #input("Please enter the 1st Keyword : ")
-    Keyword2 = rnlp.readline()  #input("Please enter the 2nd Keyword : ")
-    Keyword3 = rnlp.readline()  #input("Please enter the 3rd Keyword : ")
-    Keyword4 = rnlp.readline()  #input("Please enter the 4th Keyword : ") 
+    SplitNLP = NLPString.split(" ")
+    SplitNLP = list(dict.fromkeys(SplitNLP))
 
-    print("")
+    print("[SYSTEM] NLP Result = " + str(SplitNLP)) #<=================== COMMENT THIS LINE OUT AT THE END!!!!!!!!! 
 
-    # this creates a new object from the subtask class
-    NewTask = subTask(idNumber, Task, Deadline, Filename, MasterKey, Keyword1, Keyword2, Keyword3, Keyword4)
-    #print(NewTask.searchMe) #keywords printed line by line ??????
-    NewTask.PwintMe()
-    print("")
 
+    #==================================================================================================================================
     #runs the Search from the details stored in class
-    query = NewTask.searchMe
+    query = NLPString
     pdfQuery = query + " filetype:pdf"
     SSchQuery = query + " semanticscholar"
 
-    print("Generating Refined Results Needed for Subtask " + NewTask.taskID +"....")
+    #print("Generating Refined Results Needed for Subtask " + idNumber +"....")
 
     def BaseSearch(String, ResultNum):
         for j in search(String, tld="co.uk", num=ResultNum, stop=ResultNum, pause=2):
-            #print(j + " \n")
             SearchResults.append(str(j))
-            #f = open("4_RefferenceResultGen\TestFolder\\"+  NewTask.fileName +".txt", "a")
-            f = open("4_RefferenceResultGen\TestFolder\Test.txt", "a") # comment me and uncomment above line in final
+            #All below extra
+            f = open("4_RefferenceResultGen\TestFolder\RawSearch.txt", "a") 
             f.write(j+"\n")
             f.close()
-    
-    BaseSearch(pdfQuery,2)        
-    BaseSearch(query, 20)
-    BaseSearch(SSchQuery,2)
 
+    print ("[SYSTEM] Running a base Search on Google with NLP Result...")
+    BaseSearch(pdfQuery,20)        
+    print ("[SYSTEM] Running a PDF file Search on Google with NLP Result...")
+    BaseSearch(query, 20)
+    print ("[SYSTEM] Running a Scemantic schoalar Search with NLP Result...")
+    BaseSearch(SSchQuery,20)
+
+    print ("[SYSTEM] Deleting any Duplicate links from all Search Results")
     SearchResults = list(dict.fromkeys(SearchResults)) #this ensures no duplicates in lines 
-            
-    for x in range(len(SearchResults)):
-        for y in range(len(core)):
-            if re.search(core[y], SearchResults[x]):
-                #print(SearchResults[x])
-                RefinedResults.append(SearchResults[x])
-                #f = open("4_RefferenceResultGen\TestFolder\\Refined_"+  NewTask.fileName +".txt", "a")
-                f = open("4_RefferenceResultGen\TestFolder\Refined_Test.txt", "a") # comment me and uncomment above line in final
-                f.write(SearchResults[x]+"\n")
+
+    print ("[SYSTEM] Checking Match Relevancy of links to the NLP Results (Current match tolerance = " + str(RelevancyPercent)+ "% or Greater)")
+    RelevantResults = Relevency.RelevanceCheck(SearchResults, SplitNLP, RelevancyPercent)
+
+    print ("[SYSTEM] Checking all Relevant links against Notable and Academic Domains!")   
+
+    for links in RelevantResults:
+        for domains in coreDomains:
+            if re.search(domains, links):
+                #this is for the array:
+                RefinedResults.append(links)
+                #this is for the Text file:
+                f = open("4_RefferenceResultGen\TestFolder\Refined_Links.txt", "a")
+                f.write(links+"\n")
                 f.close()
                 break
 
+    print ("[SYSTEM] RefinedResults.txt Created")
+
+    print ("[SYSTEM] Running the RecomendWeb Module...")
     RecomendWeb.main()
 
-    time.sleep(5)   # Delays for 5 seconds. can also use a float value.      
-    # this is to delete the unwanted search results text file this wont exist after i import them to classes           
-    if os.path.exists("4_RefferenceResultGen\TestFolder\Test.txt") and os.path.exists("4_RefferenceResultGen\TestFolder\Refined_Test.txt"):
-        os.remove("4_RefferenceResultGen\TestFolder\Test.txt")
-        os.remove("4_RefferenceResultGen\TestFolder\Refined_Test.txt")
-        print("\nDeleted the files Test.txt and Refined_Test.txt")
-    else:
-        print("The files does not exist Continuing")
-  
+    Delete.residualDel()
+
 #============================================================for later
 if __name__ == "__main__":
-   main()    
+    main()    
