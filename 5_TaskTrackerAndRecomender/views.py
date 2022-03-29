@@ -16,5 +16,5 @@ print(end_date)
 def messages():
     if end_date > today:
          messages.success("COMPLETE THE TASK")
-         return HttpResponseRedirect() #////
+         return HttpResponseRedirect()
         
