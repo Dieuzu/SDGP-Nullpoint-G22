@@ -18,11 +18,15 @@ display: flex;
 }
 .form{
     position: absolute;
-    width: 487px;
-    height: 516px;
-    left: 866px;
-    top: 96px;
+    width: 400px;
+    height: 500px;
+    left: 770px;
+    top: 100px;
+    background: #fff;
+    border-radius: 1%;
+    text-align: center;
+
 }
 .greetings{
-    color: #fff;
+    color: #45a6d5;
 }

@@ -1,5 +1,4 @@
-<html>
-<body>
+
 <?php
 
 $filename = $_FILES['file']['name'];
@@ -12,5 +11,3 @@ if(move_uploaded_file($_FILES['file']['tmp_name'], $location)){
 }
 
 ?>
-</body>
-</html>

@@ -10,6 +10,9 @@
 
   <!--external css sheets-->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="add_task.css" />
+
+  <script src="./main.js"></script>
 
 </head>
 
@@ -24,16 +27,19 @@
   </div>
 </header>
 
-<section class="drag-section">
-  <div class="drag">
+<section class="frame">
+  <div class="drag-section">
+    <div class="drag">
       <div class="drag-container">
-          <img class="upload-img" src="Images/cloud_upload.png" alt="">
-          <h2>Drag and drop or browse</h2>
-          <form action="/SDGP-Nullpoint-G22/1_FrontEnd/action_page.php" method="post" enctype="multipart/form-data">
-              <input type="file" name="file" />
-              <input type="submit" value="Upload" />
-          </form>
+        <img class="upload-img" src="Images/cloud_upload.png" alt="">
+        <h2>Drag and drop or browse</h2>
+        <form action="./Upload.php" method="post" enctype="multipart/form-data">
+          <input type="file" name="file" />
+          <input type="submit" value="Upload" hidden />
+          <button id="upload-button" onclick="saveFile()">Upload</button>
+        </form>
       </div>
+    </div>
   </div>
 </section>
 
