@@ -29,34 +29,23 @@
             <img class="image" src="./Images/login-img.png" alt="">
         </div>
         <div class="form">
+            <br><br>
             <b class="greetings">welcome back</b>
             <h2 class="greetings">Login to your account</h2>
-            <!-- https://www.w3schools.com/howto/howto_css_login_form.asp -->
-            <div id="id01" class="modal">
+            
 
-                <form class="modal-content animate" action="/action_page.php" method="post">
+                <form action="log.php" method="post">
+                      
+                    <label ><b>Username</b></label><br>
+                    <input type="text" placeholder="Enter Username" name="uname" required><br><br>
 
-                    <div class="container">
-                        <label for="uname"><b>Username</b></label><br>
-                        <input type="text" placeholder="Enter Username" name="uname" required><br><br>
+                    <label ><b>Password</b></label><br>
+                    <input type="password" placeholder="Enter Password" name="pass"required ><br><br><br>
 
-                        <label for="psw"><b>Password</b></label><br>
-                        <input type="password" placeholder="Enter Password" name="psw" required><br><br><br>
-
-                        <button type="submit" href="./user_page.html">Login</button><br>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                        </label><br><br>
-                    </div>
-
-                    <div class="container">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                            class="cancelbtn">Cancel</button>
-                        <span class="psw" style="color: #fff;"> <a href="#">Forgot password?</a></span>
-                    </div>
+                    <button type="submit" href="./user_page.html">Login</button><br>
+                
                 </form>
-            </div>
-
+            
         </div>
     </section>
 </body>
