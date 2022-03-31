@@ -2,12 +2,13 @@
 import re
 
 #Custom stuff
-import RecomendWeb
-import Relevency
+import RecommendWeb
+import Relevancy
 import Delete
 
 try:
     from googlesearch import search
+    print("Ayyy les Go!!")
 except ImportError:
     print("No module named 'google' found")
     print("Terminating Search....")
@@ -59,18 +60,12 @@ def SearchWeb (FileName, Relevence, Cooldown = 30): #Cooldown = time to delete c
     print ("[SYSTEM] Running a Scemantic schoalar Search with NLP Result...")
     SearchResults = BaseSearch(SSchQuery,20, SearchResults)
     
-    count = 0
-    for x in  SearchResults:
-        count = count + 1
-    
-    print ("Number of results = " + str(count))
-    
     print ("[SYSTEM] Deleting any Duplicate links from all Search Results")
     SearchResults = list(dict.fromkeys(SearchResults)) #this ensures no duplicates in lines 
     
 
     print ("[SYSTEM] Checking Match Relevancy of links to the NLP Results (Current match tolerance = " + str(RelevancyPercent)+ "% or Greater)")
-    RelevantResults = Relevency.RelevanceCheck(SearchResults, SplitNLP, RelevancyPercent)
+    RelevantResults = Relevancy.RelevanceCheck(SearchResults, SplitNLP, RelevancyPercent)
 
     print ("[SYSTEM] Checking all Relevant links against Notable and Academic Domains!")   
 
@@ -88,6 +83,6 @@ def SearchWeb (FileName, Relevence, Cooldown = 30): #Cooldown = time to delete c
     print ("[SYSTEM] RefinedResults.txt Created")
 
     print ("[SYSTEM] Running the RecomendWeb Module...")
-    RecomendWeb.CreateRecomendPage()
+    RecommendWeb.CreateRecomendPage()
 
     Delete.residualDel(Cooldown)
