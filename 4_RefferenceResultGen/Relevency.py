@@ -13,7 +13,7 @@ def RelevanceCheck(LinksArray, Relevence, matchpercent=75):
         currentpercent = round((mCount/numRelevence) * 100)
         
         if (currentpercent > matchpercent):
-            array.append( str(link) + "," + str(currentpercent) ) 
+            array.append( str(link) + "," + str(currentpercent) + "," ) 
             Tolerance.append(str(currentpercent)) 
     
     sortedArray = BubbleSort(array, Tolerance)

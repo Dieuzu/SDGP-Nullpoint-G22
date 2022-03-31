@@ -1,12 +1,12 @@
 import os     # This is for deleting files 
 import time   # This is for Setting timers 
 
-def residualDel():
-    time.sleep(20)   # Delays for 20 seconds.
-    
-    fileHunter("4_RefferenceResultGen\\TestFolder\\", "RawSearch.txt")
-    fileHunter("4_RefferenceResultGen\\TestFolder\\", "Refined_Links.txt")
-    fileHunter("4_RefferenceResultGen\\TestFolder\\", "TaskResults.html")
+def residualDel(Time):
+    time.sleep(Time)   # Delays for "Time" number of seconds.
+
+    fileHunter("4_RefferenceResultGen\\test2\\", "RawSearch.txt")
+    fileHunter("4_RefferenceResultGen\\test2\\", "Refined_Links.txt")
+    fileHunter("4_RefferenceResultGen\\test2\\", "TaskResults.html")
     
     print ("==================================================================================================================\n")
 
