@@ -36,7 +36,7 @@ def SearchWeb (FileName, Relevence = 75, Cooldown = 30): #Cooldown = time to del
 
     rnlp = open("output\\NLP\\" + str(FileName) +".txt","r")
 
-    print ("\n==================================================================================================================")
+    print ("\n=============================================== Saadat's Component ===============================================")
     print ("[SYSTEM] Getting NLP Results from directory... ")
     NLPString = rnlp.readline() 
 

@@ -1,9 +1,11 @@
 import re
 
 def RelevanceCheck(LinksArray, Relevence, matchpercent=75):
-    array = [] 
-    Tolerance = []
+    array = []     # this holds links and the relevance %
+    Tolerance = [] # this holds the relevance % in the same order as array
+    
     numRelevence = len(Relevence)
+    
     for link in LinksArray:
         mCount = 0             # Match count
         for word in Relevence:

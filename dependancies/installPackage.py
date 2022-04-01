@@ -1,11 +1,15 @@
 import subprocess
 import sys
-from dependancies import installDependancy
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-    
 
-install ("setuptools")
-
-installDependancy.main()
+try: 
+    from dependancies import installDependancy
+except ImportError:
+    print("\n[SYSTEM] 'setuptools' is missing!\n")
+    install("setuptools")
+    from dependancies import installDependancy
+    print("\n[SYSTEM] Checking if any additional Dependancies needed..")
+    dependance = installDependancy.iDependance
+    dependance()

@@ -4,9 +4,17 @@ import time   # This is for Setting timers
 def residualDel(Time):
     time.sleep(Time)   # Delays for "Time" number of seconds.
 
-    fileHunter("output\\SearchResults\\", "RawSearch.txt")
-    fileHunter("output\\SearchResults\\", "Refined_Links.txt")
-    fileHunter("web\\html\\", "TaskResults.html")
+    outputSR = "output\\SearchResults\\"
+    webHTML = "web\\html\\"
+    
+    #this is for future stuff
+    inputFiles = "input\\"
+    outputNLP = "output\\NLP\\"
+    outputRaw = "output\\Raw\\"
+
+    fileHunter(outputSR, "RawSearch.txt")
+    fileHunter(outputSR, "Refined_Links.txt")
+    fileHunter(webHTML, "TaskResults.html")
     
     print ("==================================================================================================================\n")
 
