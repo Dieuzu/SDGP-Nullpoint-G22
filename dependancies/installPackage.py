@@ -1,6 +1,6 @@
 import subprocess
 import sys
-import installDependancy
+from dependancies import installDependancy
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
