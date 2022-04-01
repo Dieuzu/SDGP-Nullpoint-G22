@@ -1,20 +1,20 @@
 # Built in stuff
 import re
 
-#Custom stuff
+#Custom stuff i made
 import RecommendWeb
 import Relevancy
 import Delete
 
+#this is needed to Do a google Search we throw it into a try except to kill entire thing in event it cannot be imported!
 try:
     from googlesearch import search
-    print("Ayyy les Go!!")
 except ImportError:
     print("No module named 'google' found")
     print("Terminating Search....")
     quit()
 
-
+#this is a function to webscrape (it requires Search String, number of results to look up and an array to store them into)
 def BaseSearch(String, ResultNum, SearchArray):
     for j in search(String, tld="co.uk", num=ResultNum, stop=ResultNum, pause=2):
         SearchArray.append(str(j))
@@ -24,7 +24,7 @@ def BaseSearch(String, ResultNum, SearchArray):
         f.close()
     return SearchArray
 
-def SearchWeb (FileName, Relevence, Cooldown = 30): #Cooldown = time to delete created files default set to 30 secs
+def SearchWeb (FileName, Relevence = 75, Cooldown = 30): #Cooldown = time to delete created files default set to 30 secs
     
     RelevancyPercent = Relevence # this is the tolerence for relevancy
 
@@ -63,7 +63,7 @@ def SearchWeb (FileName, Relevence, Cooldown = 30): #Cooldown = time to delete c
     print ("[SYSTEM] Deleting any Duplicate links from all Search Results")
     SearchResults = list(dict.fromkeys(SearchResults)) #this ensures no duplicates in lines 
     
-
+    # this checks each link and its relevancy to the NLP Keywords it also identifies the relevency based on the tolerance set!
     print ("[SYSTEM] Checking Match Relevancy of links to the NLP Results (Current match tolerance = " + str(RelevancyPercent)+ "% or Greater)")
     RelevantResults = Relevancy.RelevanceCheck(SearchResults, SplitNLP, RelevancyPercent)
 
