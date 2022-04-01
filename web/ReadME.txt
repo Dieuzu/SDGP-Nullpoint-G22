@@ -1,0 +1,1 @@
+This folder is for where the web pages and stuff from front end will be placed finally.

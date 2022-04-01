@@ -2,9 +2,9 @@
 import re
 
 #Custom stuff i made
-import RecommendWeb
-import Relevancy
-import Delete
+from researchGap import RecommendWeb
+from researchGap import Relevancy
+from researchGap import Delete
 
 #this is needed to Do a google Search we throw it into a try except to kill entire thing in event it cannot be imported!
 try:

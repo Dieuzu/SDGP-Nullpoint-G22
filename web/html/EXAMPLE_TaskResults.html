@@ -1,13 +1,4 @@
-# write-html.py
-import webbrowser
-
-def CreateRecomendPage():
-        
-    f = open('web\\html\\TaskResults.html','a')
-    r = open('output\\SearchResults\\Refined_Links.txt','r')
-    
-
-    P1 = """<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
         <head>
@@ -34,19 +25,17 @@ def CreateRecomendPage():
                     <h4> [For better results Check them based on Relevancy]</h4>
                 </div>
 
-                """
-
-    P2_1 = """<div class="link-box">
-                    <h5><a href=\""""
-
-
-    P2_3 = """</a></h5>
+                <div class="link-box">
+                    <h5><a href="https://www.javatpoint.com/difference-between-abstract-class-and-interface" target="_blank">Check out Link Number: 1 (83% Relevancy)</a></h5>
                 </div>
                 <br><br>
 
-                """
+                <div class="link-box">
+                    <h5><a href="https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/" target="_blank">Check out Link Number: 2 (83% Relevancy)</a></h5>
+                </div>
+                <br><br>
 
-    P3 = """<footer>
+                <footer>
                     <img class="footer-logo" src="">
                     <div class="footer-title">
                         <h2>Join Assignment Manager</h2>
@@ -76,25 +65,4 @@ def CreateRecomendPage():
                 </footer>
             </section>
         </body>
-    </html>"""
-    
-    print ("[SYSTEM] Creating the TaskResults.html")
-    f.write(P1)
-    Linkindex = 1
-    
-    for x in r:
-        spliter = x.split(",")
-        
-        P2_2 = "\" target=\"_blank\">Check out Link Number: " +  str(Linkindex)  + " (" + str(spliter[1]) +"% Relevancy)"
-
-        FullHtml =  P2_1 + spliter[0] + P2_2 + P2_3
-        Linkindex += 1 
-        f.write(FullHtml)
-
-    f.write(P3)
-    f.close()
-    
-    print("[SYSTEM] Deploying the TaskResults.html")
-
-    url = 'web\\html\\TaskResults.html'
-    webbrowser.open(url, new=2)  # open in new tab
+    </html>
