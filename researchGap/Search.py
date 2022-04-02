@@ -1,10 +1,12 @@
 # Built in stuff
-import re
+import re    # Regular expressions for doing secondary isolation of links against Partnerd/Recomended Acedemic domains
+import time  # For benchmarking the core component!
 
 #Custom stuff i made
 from researchGap import RecommendWeb
 from researchGap import Relevancy
-from researchGap import Delete
+from luxuryFeatures import Delete
+from luxuryFeatures import gamification
 
 #this is needed to Do a google Search we throw it into a try except to kill entire thing in event it cannot be imported!
 try:
@@ -37,6 +39,8 @@ def SearchWeb (FileName, Relevence = 75, Cooldown = 30): #Cooldown = time to del
     rnlp = open("output\\NLP\\" + str(FileName) +".txt","r")
 
     print ("\n=============================================== Saadat's Component ===============================================")
+    start = time.perf_counter()
+    
     print ("[SYSTEM] Getting NLP Results from directory... ")
     NLPString = rnlp.readline() 
 
@@ -60,11 +64,11 @@ def SearchWeb (FileName, Relevence = 75, Cooldown = 30): #Cooldown = time to del
     print ("[SYSTEM] Running a Scemantic schoalar Search with NLP Result...")
     SearchResults = BaseSearch(SSchQuery,20, SearchResults)
     
-    print ("[SYSTEM] Deleting any Duplicate links from all Search Results")
+    print ("\n[SYSTEM] Deleting any Duplicate links from all Search Results")
     SearchResults = list(dict.fromkeys(SearchResults)) #this ensures no duplicates in lines 
     
     # this checks each link and its relevancy to the NLP Keywords it also identifies the relevency based on the tolerance set!
-    print ("[SYSTEM] Checking Match Relevancy of links to the NLP Results (Current match tolerance = " + str(RelevancyPercent)+ "% or Greater)")
+    print ("\n[SYSTEM] Checking Match Relevancy of links to the NLP Results (Current match tolerance = " + str(RelevancyPercent)+ "% or Greater)")
     RelevantResults = Relevancy.RelevanceCheck(SearchResults, SplitNLP, RelevancyPercent)
 
     print ("[SYSTEM] Checking all Relevant links against Notable and Academic Domains!")   
@@ -81,8 +85,15 @@ def SearchWeb (FileName, Relevence = 75, Cooldown = 30): #Cooldown = time to del
                 break
 
     print ("[SYSTEM] RefinedResults.txt Created")
-
-    print ("[SYSTEM] Running the RecomendWeb Module...")
+    
+    print ("\n[SYSTEM] Running the RecomendWeb Module...")
     RecommendWeb.CreateRecomendPage()
-
+    
+    elapsed = time.perf_counter()
+    timeTaken = elapsed - start
+    print ("\n[SYSTEM] This Component took Exactly " + str(round(timeTaken,2)) + " seconds to Generate Results!\n")
+    
     Delete.residualDel(Cooldown)
+    
+    print("\n================================================== Gamification ==================================================")
+    gamification.questionOne(FileName)

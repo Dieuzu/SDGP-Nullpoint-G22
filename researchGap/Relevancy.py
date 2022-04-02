@@ -7,12 +7,12 @@ def RelevanceCheck(LinksArray, Relevence, matchpercent=75):
     numRelevence = len(Relevence)
     
     for link in LinksArray:
-        mCount = 0             # Match count
+        mCount = 0             # Match count (this is number of NLP words that match with the numRelevence)
         for word in Relevence:
             if re.search(word.lower(), link.lower()):
                 mCount += 1
 
-        currentpercent = round((mCount/numRelevence) * 100)
+        currentpercent = round((mCount/numRelevence) * 100, 2)
         
         if (currentpercent > matchpercent):
             array.append( str(link) + "," + str(currentpercent) + "," ) 

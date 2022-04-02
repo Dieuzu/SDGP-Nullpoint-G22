@@ -15,8 +15,6 @@ def residualDel(Time):
     fileHunter(outputSR, "RawSearch.txt")
     fileHunter(outputSR, "Refined_Links.txt")
     fileHunter(webHTML, "TaskResults.html")
-    
-    print ("==================================================================================================================\n")
 
 
 def fileHunter(Root, Name):
