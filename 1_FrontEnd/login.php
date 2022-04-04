@@ -37,12 +37,12 @@
                 <form action="log.php" method="post">
                       
                     <label ><b>Username</b></label><br>
-                    <input type="text" placeholder="Enter Username" name="uname" required><br><br>
+                    <input type="text" placeholder="Enter Username" name="uname" ><br><br>
 
                     <label ><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="pass"required ><br><br><br>
+                    <input type="password" placeholder="Enter Password" name="pass" ><br><br><br>
 
-                    <button type="submit" href="./user_page.html">Login</button><br>
+                    <button type="submit">Login</button><br>
                 
                 </form>
             
