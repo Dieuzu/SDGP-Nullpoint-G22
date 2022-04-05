@@ -13,6 +13,7 @@ def spacyNLP(DIR, Name, Num):
     #for token in taskDoc:
      #   if not token.is_stop:
       #      print(token)
+      
 
     chunkKeywords = ""
 
