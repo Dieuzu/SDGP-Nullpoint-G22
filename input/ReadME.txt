@@ -1,0 +1,1 @@
+This folder is for where Pdf, docx and images from front end get stored! 

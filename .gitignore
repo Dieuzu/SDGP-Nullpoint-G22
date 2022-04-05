@@ -1,5 +1,10 @@
 venv/
+
 4_RefferenceResultGen/__pycache__/
+researchGap/__pycache__/
+dependancies/__pycache__/
+luxuryFeatures/__pycache__/
+
 Test/
 
 #Randomly generated files

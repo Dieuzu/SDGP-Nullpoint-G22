@@ -1,0 +1,43 @@
+.login{
+    position: absolute;
+    width: 1440px;
+    height: 519px;
+    left: 0px;
+    top: 50px;
+    background: #45A6D5;
+}
+.frame{
+display: flex;
+}
+.image{
+    position: absolute;
+    width: 719.01px;
+    height: 417px;
+    left: 35px;
+    top: 70px;
+}
+.form{
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    left: 770px;
+    top: 70px;
+    background: #fff;
+    border-radius: 5%;
+    text-align: center;
+
+}
+.greetings{
+    color: #45a6d5;
+}
+
+button hover{
+    opacity: 7;
+}
+.error{
+    background: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+}
