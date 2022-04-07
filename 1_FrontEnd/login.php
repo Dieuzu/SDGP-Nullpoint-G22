@@ -9,8 +9,8 @@
     <title>Login</title>
 
     <!--external css sheets-->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./login.css" />
 
 </head>
 
@@ -29,22 +29,22 @@
             <img class="image" src="./Images/login-img.png" alt="">
         </div>
         <div class="form">
-            <br><br>
-            <b class="greetings">welcome back</b>
-            <h2 class="greetings">Login to your account</h2>
-            
+            <form action="log.php" method="post">
+                <h3 class="greetings">welcome back</h3>
+                <h2 class="greetings">Login to your account</h2>
+                <?php if(isset($_GET['error'])) { ?>
+                    <p class="error"> <?php echo $_GET['error']; ?> </p>
 
-                <form action="log.php" method="post">
-                      
-                    <label ><b>Username</b></label><br>
-                    <input type="text" placeholder="Enter Username" name="uname" ><br><br>
+                <?php } ?>
+                <label ><b>Username</b></label><br>
+                <input type="text" placeholder="Enter Username" name="username" ><br><br>
 
-                    <label ><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="pass" ><br><br><br>
+                <label ><b>Password</b></label><br>
+                <input type="password" placeholder="Enter Password" name="password" ><br><br><br>
 
-                    <button type="submit">Login</button><br>
+                <button type="submit">Login</button><br>
                 
-                </form>
+            </form>
             
         </div>
     </section>
