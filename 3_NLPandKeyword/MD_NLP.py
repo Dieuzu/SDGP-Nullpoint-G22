@@ -3,30 +3,36 @@ import spacy
 #nlp = spacy.load("en_core_web_md")
 nlp = spacy.load("en_core_web_sm")
 
+#=======================================================================================
+
 def spacyNLP(DIR, Name, Num):
     Taskfile = DIR + Name+ str(Num) +".txt"  #DIR\Task_Num.txt
     Keyfile = DIR + Name+ str(Num) +"_Keywords.txt" #DIR\Task_Num_Keywords.txt
     
     task =  r"" + Taskfile
     taskDoc = nlp(open(task).read())
-
-    #for token in taskDoc:
-     #   if not token.is_stop:
-      #      print(token)
-      
+  
 
     chunkKeywords = ""
 
     for chunk in taskDoc.noun_chunks:
     #    print(chunk)
         chunkKeywords = chunkKeywords + " " + str(chunk)
-    print("The Extracted Keywords are : " + chunkKeywords)    
-    #print(str(taskDoc.ents))
 
+    keywordDoc = nlp(chunkKeywords)
+
+    tokenKeyword = ""
+
+    for token in keywordDoc:
+        if not token.is_stop:
+            tokenKeyword = tokenKeyword + " " + str(token)
+            print(token)
+
+    print("The Extracted Keywords are : " + tokenKeyword)    
+    
     saveTaskNLPK = open(r""+Keyfile,'w')
-    saveTaskNLPK.write(chunkKeywords)
+    saveTaskNLPK.write(tokenKeyword)
     saveTaskNLPK.close()
-
 
 #==================================================================
 directory = "3_NLPandKeyword\\Sample_Text\\"
