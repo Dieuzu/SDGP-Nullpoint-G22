@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Home</title>
+
+  <!--external css sheets-->
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <link rel="stylesheet" href="task.css">
+
+</head>
+
+<body>
+  <header>
+    <a href="./index.html">
+      <img class="logo" src="Images/logo.png" />
+    </a>
+  </header>
+
+  <body>
+    <script src="Task.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+    <script>
+      function xyz() {
+        $(function () {
+
+
+          var assignment = [];
+
+          $.getJSON('assignment.json', function (data) {
+
+            // console.log("x");
+            $.each(data.assignment, function (i, f) {
+
+              $('#title').val(f.task);
+              $('#usr').val(f.whoShouldDo);
+              //console.log(f.task);
+              //   var tblRow = "<tr>" + "<td>" + f.task + "</td>" +
+              //   "<td>" + f.whoShouldDo + "</td>"  + "</tr>"
+              //   $(tblRow).appendTo("#userdata tbody");
+            });
+
+          });
+
+        });
+      }
+
+
+
+    </script>
+    <section class="frame">
+      <br>
+      <div class="container">
+        <div class="jumbotron page-header">
+
+          <h2 style="margin:5px">Todo-List</h2>
+
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="title">Task:-</label>
+            <input type="text" id="title" class="form-control" placeholder="Add a title... ">
+          </div>
+          <div class="form-group">
+            <label for="usr">Who should do it:-</label>
+            <input type="text" id="usr" class="form-control" placeholder="Add a user...">
+          </div>
+          <div class="form-group">
+            <label for="usr">Due Date:-</label>
+            <input type="date" id="due-date" class="form-control" placeholder="Due date">
+          </div>
+          <div class="row">
+            <div class="col-xs-3 pull-left">
+              <button type="button" class="btn btn-primary" onclick="newElement()">Add Task</button>
+              <button type="button" class="btn btn-primary" onclick="xyz()">Automatically Add Task</button>
+            </div>
+
+
+
+            <!--<div class="dropdown col-xs-3 pull-left">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Sort
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">-->
+            <!-- <li class="dropdown-list" onclick="sortElementsById()">By ID</li>-->
+            <!--<li class="dropdown-list" onclick="sortElementsByName()">By Name</li>-->
+            </ul>
+
+
+
+          </div>
+          <div class="col-lg-6 pull-right">
+            <div class="input-group">
+              <input id="search-text" onkeyup="searchInList()" type="text" class="form-control"
+                placeholder="Search....." name="search">
+            </div>
+          </div>
+      </div>
+      </form>
+      <!--             <p id="demo"></p>-->
+      <!-- <table id= "userdata" border="2">-->
+      <!--<thead>-->
+      <!--          <th>task</th>-->
+      <!--          <th>Who should</th>-->
+
+      <!--      </thead>-->
+      <!--    <tbody>-->
+
+      <!--     </tbody>-->
+      <!-- </table>-->
+      </div>
+      <div class="tasks">
+        <ul id="task-list">
+        </ul>
+      </div>
+      <ul id="pagination" class="pagination pagination-lg"></ul>
+      <footer>
+        <img class="footer-logo" src="">
+        <div class="footer-title">
+            <h2>Join Assignment Manager</h2>
+            <p>Subscribe to get alerted on new updates and offers</p>
+
+        </div>
+
+        <div class="footerForm">
+            <input type="email" placeholder="Enter Your Email" class="widget-input footerEmail">
+            <button class="primary-btn subscribe" onclick="">Subscribe</button>
+        </div>
+
+
+        <div class="hr"></div>
+        <div class="footer-bottom">
+            <div class="footer-btm-cnt">
+                <p>Privacy policy</p>
+            </div>
+            <div class="footer-btm-cnt">
+                <p>Terms and Conditions</p>
+            </div>
+            <div class="footer-btm-cnt">
+                <p>Covid Guidelines</p>
+            </div>
+        </div>
+        <div class="cpryt">
+            <p>@Assignment Manager 2022</p>
+        </div>
+    </footer>
+    </section>
+  </body>
+
+</html>

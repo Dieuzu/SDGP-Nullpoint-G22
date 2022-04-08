@@ -30,8 +30,11 @@ display: flex;
 .greetings{
     color: #45a6d5;
 }
-
-button hover{
+button{
+    background-color: #45a6d5;
+    border-radius: 5px;
+}
+button:hover{
     opacity: 7;
 }
 .error{
