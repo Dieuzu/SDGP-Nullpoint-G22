@@ -3,7 +3,7 @@ import subprocess
 import pkg_resources
 
 def iDependance():
-    required = {'google', 'beautifulsoup4', 'semanticscholar', 'spacy', 'opencv-python', 'pytesseract'}
+    required = {'google', 'beautifulsoup4', 'semanticscholar', 'spacy', 'opencv-python', 'pytesseract','docx2txt','PyPDF2'}
     installed = {pkg.key for pkg in pkg_resources.working_set}
     missing = required - installed
 
