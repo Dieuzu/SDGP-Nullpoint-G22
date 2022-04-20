@@ -2,7 +2,6 @@
 from dependancies import installPackage #this will check if all dependancies are installed if not it will start chain to install all of them!
 from researchGap import Search
 
-
 initiate = Search.SearchWeb # simplifies the method
 
 initiate("NLPResultsExample", 80, 5) # this is TEST CODE relevancy tollerance set to 25% and CD set to 5 secs!

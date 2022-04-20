@@ -1,9 +1,6 @@
 import chunk
 import spacy
-#nlp = spacy.load("en_core_web_md")
 nlp = spacy.load("en_core_web_sm")
-
-#=======================================================================================
 
 def spacyNLP(RDIR, Name, Num):
     NDIR = "output\\NLP\\" #this is the NLP saving location
@@ -13,7 +10,6 @@ def spacyNLP(RDIR, Name, Num):
     
     task =  r"" + Taskfile
     taskDoc = nlp(open(task).read())
-  
 
     chunkKeywords = ""
 
@@ -37,18 +33,11 @@ def spacyNLP(RDIR, Name, Num):
     saveTaskNLPK.close()
 
 #==================================================================
-directory = "3_NLPandKeyword\\Sample_Text\\"
-taskcount = 0
-taskName = "Task_"
+#directory = "3_NLPandKeyword\\Sample_Text\\"
+#taskcount = 0
+#taskName = "Task_"
 
-taskNumber = 3
-for i in range (taskNumber):
-    taskcount += 1
-    spacyNLP(directory, taskName, taskcount)
-
-
-
-
-#with open('output.txt', 'w') as f:
- #   while loop:
-       #f.write(stuff)
+#taskNumber = 3
+#for i in range (taskNumber):
+#    taskcount += 1
+#    spacyNLP(directory, taskName, taskcount)
