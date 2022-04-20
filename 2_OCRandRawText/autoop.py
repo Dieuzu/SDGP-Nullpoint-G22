@@ -3,6 +3,7 @@ import readImage
 import readWord
 import readPDF
 import searchtxt
+from luxuryFeatures import Delete
 
 def autoop():
     for root,dirs,files in os.walk('input\\'):
@@ -15,6 +16,7 @@ def autoop():
                 readImage.readImage(os.path.join(root,file)) 
 
     searchtxt.searchtxt()
+    Delete.residualDel(60)
             
 if __name__ == "__main__":
     autoop()

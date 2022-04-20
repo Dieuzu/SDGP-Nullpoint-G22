@@ -4,7 +4,7 @@ from researchGap import Search
 
 initiate = Search.SearchWeb # simplifies the method
 
-initiate("NLPResultsExample", 80, 5) # this is TEST CODE relevancy tollerance set to 25% and CD set to 5 secs!
+initiate("NLPResultsExample", 80, 120) # this is TEST CODE relevancy tollerance set to 25% and CD set to 5 secs!
 
 # there are  3 Ways to the Initiate Method for Recomended reseults (see below comments) 
 
