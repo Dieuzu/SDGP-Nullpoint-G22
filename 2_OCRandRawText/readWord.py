@@ -3,6 +3,6 @@ def readword(filename):
 
     mytext = docx2txt.process(filename)
 
-    f = open('D:\campus\ex\pdoc.txt', 'w')
+    f = open('input\\pdoc.txt', 'w')
     f.write(mytext)
     f.close()

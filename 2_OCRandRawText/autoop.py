@@ -4,8 +4,8 @@ import readWord
 import readPDF
 import searchtxt
 
-def inputfiletype():
-    for root,dirs,files in os.walk('D:\campus\ex'):
+def autoop():
+    for root,dirs,files in os.walk('input\\'):
         for file in files:
             if file.endswith('.pdf'):
                 readPDF.pdfFile(os.path.join(root,file))
@@ -16,3 +16,5 @@ def inputfiletype():
 
     searchtxt.searchtxt()
             
+if __name__ == "__main__":
+    autoop()

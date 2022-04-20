@@ -18,7 +18,7 @@ def Separatetxt(filename):
             b.write(str2)
             b.close()
 
-         if x == 24:
+         if x == 22:
             str3 = line
             c = open('D:\campus\\text\Task_3.txt', 'w')
             c.write(str3)

@@ -13,7 +13,7 @@ def pdfFile(filename):
         print("Page no :" + str (1 + pdfReader.getPageNumber(pageObj)))
         content = pageObj.extractText()
 
-        f = open('D:\campus\ex\p.txt', 'w')
+        f = open('input\\ppdf.txt', 'w')
         f.write(content)
         f.close()       
 

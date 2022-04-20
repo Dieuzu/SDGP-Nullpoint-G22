@@ -12,7 +12,7 @@ def Separatetxt(filename):
          str1 = line
       elif x == 13:
          str2 = line
-         a = open('D:\campus\\text\Task_1.txt', 'w')
+         a = open('output\Raw\Task_1.txt', 'w')
          a.write(str1+str2)
          a.close()
 
@@ -20,13 +20,13 @@ def Separatetxt(filename):
          str3 = line
       elif x == 10:
          str4 = line
-         b = open('D:\campus\\text\Task_2.txt', 'w')
+         b = open('output\Raw\Task_2.txt', 'w')
          b.write(str3+str4)
          b.close()
 
       if x == 7:
          str5 = line
-         c = open('D:\campus\\text\Task_3.txt', 'w')
+         c = open('output\Raw\Task_3.txt', 'w')
          c.write(str5)
          c.close()
          
