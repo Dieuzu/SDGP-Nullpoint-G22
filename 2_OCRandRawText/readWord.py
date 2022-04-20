@@ -1,15 +1,8 @@
 def readword(filename):
-    import docx
+    import docx2txt
 
-    doc = docx.Document(filename)
+    mytext = docx2txt.process(filename)
 
-    completeText = []
-
-    for para in doc.paragraphs:
-        completeText.append(para.text)
-
-    a = ('\n' .join(completeText))
-
-    f = open('D:\campus\ex\p.txt', 'w')
-    f.write(a)
+    f = open('D:\campus\ex\pdoc.txt', 'w')
+    f.write(mytext)
     f.close()
