@@ -4,6 +4,7 @@ venv/
 researchGap/__pycache__/
 dependancies/__pycache__/
 luxuryFeatures/__pycache__/
+2_OCRandRawText/__pycache__/
 Tesseract-OCR/
 
 
