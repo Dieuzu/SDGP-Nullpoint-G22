@@ -6,15 +6,22 @@ import searchtxt
 # from luxuryFeatures import Delete
 
 def autoop():
+    print("------------------------------------- OCR Part Start Here -------------------------------------\n")
+    print("[SYSTEM] checking the file extention\n")
     for root,dirs,files in os.walk('input\\'):
         for file in files:
             if file.endswith('.pdf'):
+                print("[SYSTEM] File found with .pdf extection\n")
                 readPDF.pdfFile(os.path.join(root,file))
+                
             elif file.endswith('.docx'):
+                print("[SYSTEM] File found with .docx extection\n")
                 readWord.readword(os.path.join(root,file))
+                
             elif file.endswith('.png'):
+                print("[SYSTEM] File found with .png extection\n")
                 readImage.readImage(os.path.join(root,file)) 
-
+                
     searchtxt.searchtxt()
     # Delete.residualDel(60)
             
