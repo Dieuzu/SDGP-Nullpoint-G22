@@ -1,6 +1,10 @@
 import spacy
 
-def extractNLPKeys(RDIR, Name, Num):
+def extractNLPKeys(RDIR, Name, Num): 
+    # RDIR = the Root location of the file u wanna run through nlp
+    # Name = name of the file u wanna run through NLP
+    # Number = index of the file name
+    
     nlp = spacy.load("en_core_web_sm")
 
     print("[SYSTEM] Extracting Keywords from : " + Name + str(Num)+ ".txt!")
