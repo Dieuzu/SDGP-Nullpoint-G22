@@ -6,6 +6,7 @@ initiate = Search.SearchWeb # simplifies the method
 
 initiate("NLPResultsExample", 80, 120) # this is TEST CODE relevancy tollerance set to 25% and CD set to 5 secs!
 
+#initiate("Task_3_Keywords", 20, 10)
 # there are  3 Ways to the Initiate Method for Recomended reseults (see below comments) 
 
 #initiate("NLPResultsExample")          # Uses Default Relevance of 75% and Default delete Cooldown of 30 secs
