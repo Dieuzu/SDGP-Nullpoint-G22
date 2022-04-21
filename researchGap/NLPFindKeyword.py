@@ -1,4 +1,6 @@
-import chunk
+print("[SYSTEM] Importing SPACY library")
+print("\n[SYSTEM] Extracting Keywords from Coursework Specification....\n")
+
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
@@ -24,20 +26,24 @@ def spacyNLP(RDIR, Name, Num):
     for token in keywordDoc:
         if not token.is_stop:
             tokenKeyword = tokenKeyword + " " + str(token)
-            print(token)
+           
 
-    print("The Extracted Keywords are : " + tokenKeyword)    
+    print("The Extracted Keywords for TASK " + str(Num) + " are : " + tokenKeyword)    
+    print(" ") 
     
     saveTaskNLPK = open(r""+Keyfile,'w')
     saveTaskNLPK.write(tokenKeyword)
     saveTaskNLPK.close()
 
 #==================================================================
-#directory = "3_NLPandKeyword\\Sample_Text\\"
-#taskcount = 0
-#taskName = "Task_"
+directory = "3_NLPandKeyword\\Sample_Text\\"
+taskcount = 0
+taskName = "Task_"
 
-#taskNumber = 3
-#for i in range (taskNumber):
-#    taskcount += 1
-#    spacyNLP(directory, taskName, taskcount)
+taskNumber = 3
+for i in range (taskNumber):
+    taskcount += 1
+    spacyNLP(directory, taskName, taskcount)
+
+
+print("\n[SYSTEM] Successfully identified KEYWORDS !!!")
