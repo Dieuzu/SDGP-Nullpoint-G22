@@ -1,14 +1,16 @@
-.main{
+.main {
     text-align: center;
     background-color: #45a6d5;
     padding-top: 20px;
-    
+
 }
-.context{
+
+.context {
     color: #fff;
     font-family: "Manrope", sans-serif;
 }
-.link-box{
+
+.link-box {
     background: #ffffff;
     border-radius: 10px;
     width: 60%;
@@ -16,6 +18,10 @@
     margin-left: auto;
     margin-right: auto;
 }
-.link-box h5 a{
+
+.link-box h5 a {
     color: black;
 }
+
+/*responsiveness for mobile*/
+@media screen and (max-width : 1024px) {}

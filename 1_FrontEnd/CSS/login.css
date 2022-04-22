@@ -1,46 +1,97 @@
-.login{
-    position: absolute;
-    width: 1440px;
-    height: 519px;
-    left: 0px;
-    top: 50px;
+body {
+    margin: 0;
+    font-family: "Manrope",
+        sans-serif;
+    color: #4f4f4f;
+    overflow-x: hidden;
+}
+
+.login {
+    width: 100%;
+    height: 540px;
     background: #45A6D5;
+    display: flex;
+    padding: 50px;
+
 }
-.frame{
-display: flex;
+
+.frame {
+    width: 40%;
 }
-.image{
-    position: absolute;
-    width: 719.01px;
-    height: 417px;
-    left: 35px;
-    top: 70px;
+
+.image {
+    width: 800px;
+    height: 400px;
+    float: left;
+    margin-top: 30px;
 }
-.form{
-    position: absolute;
+
+.form {
     width: 400px;
     height: 350px;
-    left: 770px;
-    top: 70px;
     background: #fff;
     border-radius: 5%;
     text-align: center;
+    margin-top: 80px;
+    margin-left: 300px;
 
 }
-.greetings{
+
+.greetings {
     color: #45a6d5;
 }
-button{
+
+button {
     background-color: #45a6d5;
     border-radius: 5px;
 }
-button:hover{
+
+button:hover {
     opacity: 7;
 }
-.error{
-    background: #f2dede;
-    color: #a94442;
-    padding: 10px;
-    width: 95%;
-    border-radius: 5px;
+
+.primary-btn a {
+    color: #fff;
+}
+
+/*responsiveness for tablets*/
+@media screen and (max-width : 1024px) {
+    .login {
+        width: 920px;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        padding-right: 0;
+        margin-top: 100px;
+    }
+
+    .form {
+        margin-left: 100px;
+    }
+}
+
+/*responsiveness for mobile*/
+@media screen and (max-width : 600px) {
+    .login {
+        width: 100%;
+        display: block;
+        height: fit-content;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        padding-right: 0;
+        margin-top: 100px;
+    }
+
+    .form {
+        width: 500px;
+        margin-left: 100px;
+        margin-top: 450px;
+    }
 }

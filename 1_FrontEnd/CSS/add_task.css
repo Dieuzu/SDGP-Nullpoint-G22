@@ -1,36 +1,39 @@
-.frame{
+.frame {
     background: #45A6D5;
-    
+
 }
-.head-title{
+
+.head-title {
     text-align: center;
     color: #FFFFFF;
     font-size: 35px;
     padding-top: 50px;
 }
-.head-title p{
+
+.head-title p {
     font-size: 20px;
 }
 
-.drag{
-    background-color:#FFFFFF ;
+.drag {
+    background-color: #FFFFFF;
     height: 300px;
     border-radius: 20px;
 }
-.drag-container{
+
+.drag-container {
     display: flex;
-    margin-left:350px;
+    margin-left: 350px;
     padding-top: 130px;
 }
 
-.drag-container h2{
+.drag-container h2 {
     color: #45a6d5;
 }
 
-.upload-img{
+.upload-img {
     margin-right: 70px;
 }
 
-.drag-section{
-  padding: 100px;
+.drag-section {
+    padding: 100px;
 }
