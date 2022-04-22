@@ -1,6 +1,6 @@
 import os
 
-Dependancies = {"setuptools", "google", "beautifulsoup4", "semanticscholar", "spacy", "opencv-python", "pytesseract", "docx2txt", "PyPDF2"}
+Dependancies = { "setuptools", "google", "beautifulsoup4", "semanticscholar", "spacy", "opencv-python", "pytesseract", "docx2txt", "PyPDF2" }
 
 def uninstallDependancies(name):
     cmdString = "pip uninstall -y " + name
