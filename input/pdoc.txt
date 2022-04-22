@@ -1,0 +1,23 @@
+OBJECT ORIENTED PROGRAMMING
+
+Assignment Deadline 01/06/2022, 13:00
+
+
+
+
+
+Description : Your Task is to complete any 2 of the 3 tasks given below with your Knowledge in Java OOP concepts taught during the lectures and tutorials.
+
+
+
+
+
+	Write a Detailed report on the Differences of Java Abstract classes And Interface classes in OOP.
+
+
+
+	Write a Detailed report on Java Constructors and Explain Difference between Constructor Overloading and Constructor Overriding.
+
+
+
+	Create a Simple GUI with Java Swing Containing a Jtable that will display data in Descending Order
