@@ -3,10 +3,12 @@ import readImage
 import readWord
 import readPDF
 import searchtxt
+import time
 # from luxuryFeatures import Delete
 import NLPFindKeyword
 
 def autoop():
+    start_time = time.time()
     print("------------------------------------- OCR Part Start Here -------------------------------------\n")
     print("[SYSTEM] checking the file extention\n")
     for root,dirs,files in os.walk('input\\'):
@@ -24,7 +26,10 @@ def autoop():
                 readImage.readImage(os.path.join(root,file)) 
                 
     searchtxt.searchtxt()
-    
+    sttime = time.time() - start_time
+    format_float = "{:.2f}".format(sttime)
+    print("[SYSTEM] "+format_float+" Seconds took to finished OCR part\n")
+
     #START of Rishi's componant.....................................................................
     print ("\n===================================== NLP Keyword Extraction =====================================\n")
     directory = "output\\Raw\\" # this is the folder where u get the Raw tasks 
@@ -35,7 +40,8 @@ def autoop():
     
     for i in range (taskNumber):
         taskcount += 1
-        NLPFindKeyword.extractNLPKeys(directory, taskName, taskcount)  
+        NLPFindKeyword.extractNLPKeys(directory, taskName, taskcount)
+          
     #END of Rishi's componant.......................................................................
     
     
