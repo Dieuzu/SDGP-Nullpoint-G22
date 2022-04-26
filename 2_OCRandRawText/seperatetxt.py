@@ -13,8 +13,8 @@ def Separatetxt(filename):
          str1 = line
       elif x == 13:
          str2 = line
-         a = open('output\Raw\Task_1.txt', 'w')
-         print("[SYSTEM] Task 1 save successfully\n")
+         a = open('output\Raw\Task_3.txt', 'w')
+         print("[SYSTEM] Task 3 save successfully\n")
          a.write(str1+str2)
          a.close()
 
@@ -29,8 +29,8 @@ def Separatetxt(filename):
 
       if x == 7:
          str5 = line
-         c = open('output\Raw\Task_3.txt', 'w')
-         print("[SYSTEM] Task 3 save successfully\n")
+         c = open('output\Raw\Task_1.txt', 'w')
+         print("[SYSTEM] Task 1 save successfully\n")
          c.write(str5)
          c.close()
          
