@@ -9,7 +9,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
 <script>
-function xyz(){
+function autotask(){
  $(function() {
 
 
@@ -17,15 +17,11 @@ function xyz(){
    
    $.getJSON('assignment.json', function(data) {
        
-      // console.log("x");
        $.each(data.assignment, function(i, f) {
     
              $('#title').val(f.task);
              $('#usr').val(f.whoShouldDo);
-           //console.log(f.task);
-        //   var tblRow = "<tr>" + "<td>" + f.task + "</td>" +
-        //   "<td>" + f.whoShouldDo + "</td>"  + "</tr>"
-        //   $(tblRow).appendTo("#userdata tbody");
+           
      });
 
    });
@@ -58,18 +54,10 @@ function xyz(){
         <div class="row">
           <div class="col-xs-3 pull-left">
             <button type="button" class="btn btn-primary" onclick="newElement()">Add Task</button>
-            <button type="button" class="btn btn-primary" onclick="xyz()">Automatically Add Task</button>
+            <button type="button" class="btn btn-primary" onclick="autotask()">Automatically Add Task</button>
           </div>
-  
-
-
-          <!--<div class="dropdown col-xs-3 pull-left">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Sort
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">-->
-               <!-- <li class="dropdown-list" onclick="sortElementsById()">By ID</li>-->
-                <!--<li class="dropdown-list" onclick="sortElementsByName()">By Name</li>-->
-              </ul>
+            
+            </ul>
 
 
 
@@ -81,17 +69,7 @@ function xyz(){
           </div>
         </div>
       </form>
-  <!--             <p id="demo"></p>-->
-  <!-- <table id= "userdata" border="2">-->
-  <!--<thead>-->
-  <!--          <th>task</th>-->
-  <!--          <th>Who should</th>-->
-          
-  <!--      </thead>-->
-  <!--    <tbody>-->
 
-  <!--     </tbody>-->
-  <!-- </table>-->
     </div>
     <div class="tasks">
       <ul id="task-list">
