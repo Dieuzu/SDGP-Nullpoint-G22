@@ -4,6 +4,7 @@ import readWord
 import readPDF
 import searchtxt
 import time
+import Jsonfinder
 # from luxuryFeatures import Delete
 # from researchGap import NLPFindKeyword
 
@@ -26,6 +27,7 @@ def autoop():
                 readImage.readImage(os.path.join(root,file)) 
                 
     searchtxt.searchtxt()
+    Jsonfinder.Jsonfinder()
     sttime = time.time() - start_time
     format_float = "{:.2f}".format(sttime)
     print("[SYSTEM] "+format_float+" Seconds took to finished OCR part\n")

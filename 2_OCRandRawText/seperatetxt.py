@@ -1,4 +1,5 @@
 def Separatetxt(filename):
+   import Json
    f = open(filename)
    print("[SYSTEM] Dividing Task into seperate files\n")
    
