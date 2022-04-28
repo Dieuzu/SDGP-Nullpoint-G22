@@ -1,11 +1,9 @@
-/* body {
+body {
   
-    margin: 110;
-    min-width: 270px;
-    line-height: 3.2;
+    background: #45a6d5;
     
 
-  } */
+  }
 
 a {
   display: inline-block;
