@@ -66,4 +66,10 @@ a {
 .btn-primary,
 .btn-success {
   width: 30%;
+  
+}
+
+.btn-primary{
+  color: #000;
+  background-color: #fff ;
 }

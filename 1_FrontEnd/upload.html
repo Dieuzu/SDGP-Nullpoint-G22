@@ -10,9 +10,9 @@
 
   <!--external css sheets-->
   <link rel="stylesheet" href="./CSS/style.css" />
-  <link rel="stylesheet" href="./CSS/add_task.css" />
+  <link rel="stylesheet" href="./CSS/upload.css" />
 
-  <script src="./main.js"></script>
+  <script defer src="upload.js"></script>
 
 </head>
 
@@ -33,11 +33,10 @@
       <div class="drag-container">
         <img class="upload-img" src="Images/cloud_upload.png" alt="">
         <h2>Drag and drop or browse</h2>
-        <form action="./Upload.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="file" />
-          <input type="submit" value="Upload" hidden />
-          <button id="upload-button" onclick="saveFile()">Upload</button>
-        </form>
+        <div>
+          <input name="" type="file" />
+          <button class="btn">Upload</button>
+        </div>
       </div>
     </div>
   </div>
@@ -72,7 +71,27 @@
     </div>
   </footer>
 </section>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCeXR5EW5_hbrXoZ8eAdcCcXP6To7LMtNo",
+    authDomain: "assignment-manager-b9138.firebaseapp.com",
+    projectId: "assignment-manager-b9138",
+    storageBucket: "assignment-manager-b9138.appspot.com",
+    messagingSenderId: "497245345518",
+    appId: "1:497245345518:web:88d2a75f1a9616d1f245ff",
+    measurementId: "G-8YRRW7N1GW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 
 </body>
 
