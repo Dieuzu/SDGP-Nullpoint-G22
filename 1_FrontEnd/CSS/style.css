@@ -112,6 +112,7 @@ header {
 
 }
 
+
 .right-col h2 {
   font-size: 60px;
   font-weight: 900;
@@ -124,7 +125,7 @@ header {
 }
 
 .right-col p {
-  font-size: 15px;
+  font-size: 20px;
   color: #ffff;
   padding-right: 45px;
 }

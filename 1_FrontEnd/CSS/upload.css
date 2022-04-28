@@ -38,3 +38,13 @@
     padding: 100px;
 }
 
+.upload-section{
+    margin-left: 100px;
+}
+.btn{
+    background: #45A6D5;
+    color: #fff;
+    height: 40px;
+    width: 120px;
+    border-radius: 5%;
+}
