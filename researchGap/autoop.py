@@ -6,7 +6,7 @@ import searchtxt
 import time
 import Jsonfinder
 # from luxuryFeatures import Delete
-# from researchGap import NLPFindKeyword
+import NLPFindKeyword
 
 def autoop():
     start_time = time.time()
@@ -33,7 +33,6 @@ def autoop():
     print("[SYSTEM] "+format_float+" Seconds took to finished OCR part\n")
 
     #START of Rishi's componant.....................................................................
-    """
     print ("\n===================================== NLP Keyword Extraction =====================================\n")
     directory = "output\\Raw\\" # this is the folder where u get the Raw tasks 
     taskcount = 0
@@ -44,7 +43,7 @@ def autoop():
     for i in range (taskNumber):
         taskcount += 1
         NLPFindKeyword.extractNLPKeys(directory, taskName, taskcount)
-    """    
+          
     #END of Rishi's componant.......................................................................
     
     

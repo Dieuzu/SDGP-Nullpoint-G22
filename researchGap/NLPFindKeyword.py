@@ -1,10 +1,14 @@
 import spacy
 
+import time
+
 def extractNLPKeys(RDIR, Name, Num): 
     # RDIR = the Root location of the file u wanna run through nlp
     # Name = name of the file u wanna run through NLP
     # Number = index of the file name
-    
+
+    start = time.perf_counter()
+
     nlp = spacy.load("en_core_web_sm")
 
     print("[SYSTEM] Extracting Keywords from : " + Name + str(Num)+ ".txt!")
@@ -32,3 +36,7 @@ def extractNLPKeys(RDIR, Name, Num):
     saveTaskNLPK = open(r""+Keyfile,'w')
     saveTaskNLPK.write(tokenKeyword)
     saveTaskNLPK.close()
+
+    elapsed = time.perf_counter()
+    timeTaken = elapsed - start
+    print ("\n[SYSTEM] This Component took Exactly " + str(round(timeTaken,2)) + " seconds to Generate Results!\n")
