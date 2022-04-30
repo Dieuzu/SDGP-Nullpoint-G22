@@ -1,12 +1,16 @@
 body {
-  
-    background: #45a6d5;
-    
 
-  }
+  background: #45a6d5;
+
+
+}
 
 a {
   display: inline-block;
+}
+
+header {
+  height: 79px;
 }
 
 .frame {
@@ -64,10 +68,10 @@ a {
 .btn-primary,
 .btn-success {
   width: 30%;
-  
+
 }
 
-.btn-primary{
+.btn-primary {
   color: #000;
-  background-color: #fff ;
+  background-color: #fff;
 }
