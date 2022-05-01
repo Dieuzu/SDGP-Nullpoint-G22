@@ -29,9 +29,10 @@ btn.addEventListener('click', e => {
                document.querySelector('body').innerHTML = `<img src=${url} />`
             })
             setTimeout(function(){
-               // Displaying Task page after 10 seconds
+               // Displaying Task page 
                window.location.href = './Task.html';
-            }, 2000);
+            }, );
+            alert("Hello! I am an alert box!!");
       }
 
    )
