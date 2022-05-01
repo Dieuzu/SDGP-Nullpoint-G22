@@ -7,7 +7,7 @@ def searchtxt():
 
     print("------------------------------------- Getting The Txt File And Seperate Task -------------------------------------\n")
 
-    start_time = time.time()
+
     for root,dirs,files in os.walk('input\\'):
         for file in files:
                 if file.endswith('.txt'):
@@ -19,8 +19,5 @@ def searchtxt():
                         print("[SYSTEM] Found name called "+ os.path.join(root,file)+"\n")
                         sp.Separatetxt(os.path.join(root,file))
     
-    sttime = time.time() - start_time
-    format_float = "{:.2f}".format(sttime)
-    print("[SYSTEM] "+format_float+" Seconds took to finished to do separate txt part\n")
                         
                 

@@ -5,12 +5,14 @@ import readPDF
 import searchtxt
 import time
 import Jsonfinder
+import firebaseStorage
 # from luxuryFeatures import Delete
 import NLPFindKeyword
 
 def autoop():
     start_time = time.time()
     print("------------------------------------- OCR Part Start Here -------------------------------------\n")
+    #firebaseStorage.firebase()
     print("[SYSTEM] checking the file extention\n")
     for root,dirs,files in os.walk('input\\'):
         for file in files:
@@ -31,6 +33,7 @@ def autoop():
     sttime = time.time() - start_time
     format_float = "{:.2f}".format(sttime)
     print("[SYSTEM] "+format_float+" Seconds took to finished OCR part\n")
+
 
     #START of Rishi's componant.....................................................................
     print ("\n===================================== NLP Keyword Extraction =====================================\n")

@@ -14,6 +14,3 @@ def readImage(imagename):
     f = open('input\\pimg.txt', 'w')
     f.write(text)
     f.close()
-    sttime = time.time() - start_time
-    format_float = "{:.2f}".format(sttime)
-    print("[SYSTEM] "+format_float+" Seconds Extracting Data From Image To Txt\n")

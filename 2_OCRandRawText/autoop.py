@@ -5,12 +5,14 @@ import readPDF
 import searchtxt
 import time
 import Jsonfinder
+import firebaseStorage
 # from luxuryFeatures import Delete
 # from researchGap import NLPFindKeyword
 
 def autoop():
     start_time = time.time()
     print("------------------------------------- OCR Part Start Here -------------------------------------\n")
+    firebaseStorage.firebase()
     print("[SYSTEM] checking the file extention\n")
     for root,dirs,files in os.walk('input\\'):
         for file in files:
