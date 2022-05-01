@@ -12,49 +12,25 @@
   <title>User Task page</title>
 
   <!--external css sheets-->
-  <link rel="stylesheet" href="./CSS/style.css" />
-  <link rel="stylesheet" href="./CSS/task.css">
+  <link rel="stylesheet" href="/SDGP-Nullpoint-G22/1_FrontEnd/CSS/style.css" />
+  <link rel="stylesheet" href="/SDGP-Nullpoint-G22/1_FrontEnd/CSS/task.css">
 
 </head>
 
 <body>
   <header>
-    <a href="./index.html">
-      <img class="logo" src="Images/logo.png" />
+    <a href="/SDGP-Nullpoint-G22/1_FrontEnd/HTML/index.html">
+      <img class="logo" src="/SDGP-Nullpoint-G22/1_FrontEnd/Images/logo.png" />
     </a>
   </header>
-<script src="Task.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-
-  <script>
-    function autotask() {
-      $(function () {
-
-
-        var assignment = [];
-
-        $.getJSON('assignment.json', function (data) {
-
-          $.each(data.assignment, function (i, f) {
-
-            $('#title').val(f.task);
-            $('#usr').val(f.whoShouldDo);
-
-          });
-
-        });
-
-      });
-    }
-
-
-
-  </script>
+  
+  
   <div class="container">
+    <br><br>
     <div class="jumbotron page-header">
 
       <h2 style="margin:5px">Todo-List</h2>
-
+      
     </div>
     <form>
       <div class="form-group">
@@ -84,7 +60,7 @@
       </div>
       <div class="col-lg-6 pull-right">
         <div class="input-group">
-         
+
           <input id="search-text" onkeyup="searchInList()" type="text" class="form-control" placeholder="Search....."
             name="search">
         </div>
@@ -129,6 +105,27 @@
     </div>
   </footer>
   </section>
+  <script src="/SDGP-Nullpoint-G22/1_FrontEnd/JS/Task.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+  <script>
+    function autotask() {
+      $(function () {
+
+
+        var assignment = [];
+
+        $.getJSON('/SDGP-Nullpoint-G22/1_FrontEnd/assignment.json', function (data) {
+
+          $.each(data.assignment, function (i, f) {
+
+            $('#title').val(f.task);
+            $('#usr').val(f.whoShouldDo);
+          });
+        });
+      });
+    }
+  </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 
-// select BUTTOM
+// select BUTTON
 const btn = document.querySelector('button')
 // ADD CLICK LISTENER TO THE BUTTON WE SELECTED
 btn.addEventListener('click', e => {
@@ -26,8 +26,12 @@ btn.addEventListener('click', e => {
             // RETURN A PROMISE
             .then(url => {
                // SELECTING THE BODY AND APPENDING AN IMG TAG WITH  THE URL
-               document.querySelector('body').innerHTML = `<a href=recommdation.html></a>`
+               document.querySelector('body').innerHTML = `<img src=${url} />`
             })
+            setTimeout(function(){
+               // Displaying Task page after 10 seconds
+               window.location.href = './Task.html';
+            }, 2000);
       }
 
    )

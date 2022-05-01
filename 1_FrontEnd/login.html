@@ -9,8 +9,8 @@
     <title>Login</title>
 
     <!--external css sheets-->
-    <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/login.css" />
+    <link rel="stylesheet" href="/SDGP-Nullpoint-G22/1_FrontEnd/CSS/style.css" />
+    <link rel="stylesheet" href="/SDGP-Nullpoint-G22/1_FrontEnd/CSS/login.css" />
 
 </head>
 
@@ -21,8 +21,8 @@
         </a>
 
         <div class="btn-right">
-            <button class="primary-btn"><a href="./signup.html">Register</a></button>
-            <button class="sec-btn"><a href="./index.html">Guest Login</a></button>
+            <button class="primary-btn"><a href="/SDGP-Nullpoint-G22/1_FrontEnd/HTML/signup.html">Register</a></button>
+            <button class="sec-btn"><a href="/SDGP-Nullpoint-G22/1_FrontEnd/HTML/index.html">Guest Login</a></button>
         </div>
 
     </header>
@@ -31,15 +31,10 @@
             <img class="image" src="./Images/login-img.png" alt="">
         </div>
         <div class="form">
-            <form action="log.php" method="post">
+            <form action="" method="post">
                 <h3 class="greetings">welcome back</h3>
                 <h2 class="greetings">Login to your account</h2>
-                <?php if(isset($_GET['error'])) { ?>
-                <p class="error">
-                    <?php echo $_GET['error']; ?>
-                </p>
-
-                <?php } ?>
+                
                 <label><b>Username</b></label><br>
                 <input type="text" placeholder="Enter Username" name="username"><br><br>
 
