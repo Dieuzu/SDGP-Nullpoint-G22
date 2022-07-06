@@ -49,11 +49,16 @@ var todoList = [{
   var currentPage = 1;
   var numberPerPage = 10;
   var numberOfPages = 0;
-  
+
+
+
+
+
   function newElement() {
     var inputTitle = document.getElementById('title').value,
       inputUser = document.getElementById('usr').value,
-      inputDate = document.getElementById('due-date').value, ////////////////////////////////////////////////////////////////////////
+      inputDate = document.getElementById('due-date').value,
+
       todo = '';
     if (inputTitle === '') {
       alert("Please write a task");
@@ -93,7 +98,9 @@ var todoList = [{
   function clearFields() {
     document.getElementById('title').value = '';
     document.getElementById('usr').value = '';
-    document.getElementById('due-date').value = '';    /////////////////////////////////////////////////////
+    document.getElementById('due-date').value = '';
+    
+    
   }
   
   function deleteElement(event) {
@@ -187,7 +194,7 @@ var todoList = [{
         a_element.onclick = gotoPage;
       }
       a_element.setAttribute('id', i);
-      a_element.innerHTML = i;
+      a_element.innerHTML =' ' + ' ' + i + 'Page ';
       li_element.appendChild(a_element);
       paginationTarget.appendChild(li_element);
     }
@@ -220,5 +227,6 @@ var todoList = [{
   
   window.onload = function() {
     sortElementsById();
+  
   }
   
