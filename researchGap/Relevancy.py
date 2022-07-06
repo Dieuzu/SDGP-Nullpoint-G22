@@ -1,6 +1,16 @@
 import re
 
 def RelevanceCheck(LinksArray, Relevence, matchpercent=75):
+    """
+    This function takes in an array of links and an array of relevence words. It then checks each link
+    for the relevence words and returns a sorted array of links with the relevence percentage
+    
+    :param LinksArray: This is the array of links that you want to check for relevance
+    :param Relevence: This is the list of words that you want to match against
+    :param matchpercent: This is the minimum percentage of words that must match in order to be
+    considered relevant, defaults to 75 (optional)
+    :return: a list of links that are relevant to the search query.
+    """
     array = []     # this holds links and the relevance %
     Tolerance = [] # this holds the relevance % in the same order as array
     
@@ -21,6 +31,14 @@ def RelevanceCheck(LinksArray, Relevence, matchpercent=75):
     sortedArray = BubbleSort(array, Tolerance)
     return sortedArray
 
+    """
+    It takes two arrays, one with the links and one with the tolerance values, and sorts them in
+    descending order
+    
+    :param linkArray: a list of links.
+    :param tolArray: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    :return: the linkArray....
+    """
 def BubbleSort(linkArray, tolArray):
     n = len(tolArray)
 
